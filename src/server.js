@@ -36,4 +36,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "temp")));
 //configuracao para user o arquivo de rotas
 app.use(require("./routes"));
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
