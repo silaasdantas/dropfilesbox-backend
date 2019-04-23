@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 
 //Disponibilizo meu servi para outros dominios
-app.use(cors);
+app.use(cors());
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
@@ -36,4 +36,5 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "temp")));
 //configuracao para user o arquivo de rotas
 app.use(require("./routes"));
 
+// process.env.PORT -> variavel de ambiente para porta da API
 app.listen(process.env.PORT || 3333);
