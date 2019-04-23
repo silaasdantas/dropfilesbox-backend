@@ -37,4 +37,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "temp")));
 app.use(require("./routes"));
 
 // process.env.PORT -> variavel de ambiente para porta da API
-app.listen(process.env.PORT || 3333);
+server.listen(process.env.PORT || 3333);
